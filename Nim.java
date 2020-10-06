@@ -23,7 +23,7 @@ public class Nim {
 				do{//get legit input
 					System.out.print("There are " + pile + " stones in the pile. How many would you like? (1-3): ");
 					userInput = in.nextInt();
-				}while( !isValidEntry(userInput) );
+				}while(!isValidEntry(userInput) );
 				pile-=userInput;
 				System.out.print("There are " + pile + " stones in the pile. ");
 				if(pile==0){ //If user lost
@@ -50,7 +50,16 @@ public class Nim {
 		in.close();
 	}
 	
-	//your methods ...........................
+    public static int drawStones()	{
+        return (int)(Math.random()*15.0) + 16;
+    }
+
+    public static int computersTurnAI()	{
+        for(int i = 1; i < 4; i++)	if((pile - i) % 4 == 1) return i;
+        return (int)(Math.random()*3.0) + 1;
+    }
 	
-	
-}// end of the class 	
+    public static boolean isValidEntry(int n)	{
+        return (n > 0 && n < 4);
+    }
+}
