@@ -1,5 +1,5 @@
 /**
-*Nim
+*Nim (don't fuck up or else you're screwed)
 **/
 
 import java.util.Scanner;
